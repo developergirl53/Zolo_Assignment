@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/themebackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#20B2AA"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/log_in"
+        android:layout_width="500dp"
+        android:layout_height="30dp"
+        android:text="LOG IN"
+        android:textSize="15sp"
+        android:paddingLeft="250dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:foregroundGravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/forgot"
+        android:layout_below="@+id/log_in"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="FORGOT PASSWORD?"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:maxEms="7"/>
+
+    <TextView
+        android:id="@+id/enter_ph_no"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Please enter your registered phone number"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="51dp"
+        android:layout_below="@+id/log_in"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/phone_image"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@android:drawable/stat_sys_phone_call"
+        tools:ignore="ContentDescription"
+        android:layout_alignBottom="@+id/number"
+        android:layout_toLeftOf="@+id/number"
+        android:layout_toStartOf="@+id/number"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp" />
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:fontFamily="sans-serif-light"
+        android:hint="PHONE NUMBER"
+        android:inputType="number"
+        android:maxLength="10"
+        android:paddingLeft="8dp"
+        android:textColor="#fff"
+        android:textColorHint="#ffd133"
+        android:textSize="16sp"
+        android:backgroundTint="@android:color/white"
+        android:textCursorDrawable="@drawable/cursor_white"
+        tools:ignore="HardCodedText"
+        android:layout_marginTop="77dp"
+        android:layout_alignTop="@+id/enter_ph_no"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/reset_btn"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="RESET PASSWORD"
+        android:layout_below="@+id/number"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
