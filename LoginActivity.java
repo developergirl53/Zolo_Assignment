@@ -13,12 +13,10 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText mNumber;
-    private EditText mPassword;
-    private Integer number_text;
-    private String pswd_text;
-
-    public Button mLogin;
+    public EditText mNumber, mPassword;
+    public Integer number_text;
+    public String pswd_text;
+    private Button mCreate_acc, mLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +35,8 @@ public class LoginActivity extends AppCompatActivity {
 
         mNumber = (EditText) findViewById(R.id.number);
         mPassword = (EditText) findViewById(R.id.pswd);
-        Button mLogin = (Button) mPassword.findViewById(R.id.log_btn);
+        mCreate_acc = (Button)findViewById(R.id.create_acc);
+        mLogin = (Button)findViewById(R.id.log_btn);
         mLogin.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -45,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                 if ((!mNumber.getText().toString().equals("") && !mNumber.getText().toString().equals(regEX)) &&
                         (!mPassword.getText().toString().equals("") && !mPassword.getText().toString().equals(regEX))) {
 
-                    if ((!mNumber.getText().toString().equals(""))) {
+                    if ((!mNumber.getText().toString().equals("")) && (mNumber.getText().length() <= 0)) {
                         number_text = Integer.valueOf(mNumber.getText().toString());
                         pswd_text = mPassword.getText().toString();
                     } else if ((!mNumber.getText().toString().equals(""))) {
@@ -63,13 +62,22 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                         try{
                             GetText();
-                            hideKeyboard();
+                            //hideKeyboard();
                         }
                         catch(Exception ex)
                         {
                             Toast.makeText(getApplicationContext(), " Error while Getting the value ", Toast.LENGTH_LONG ).show();
                         }
                 }
+            }
+        });
+
+        mCreate_acc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent move = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(move);
+
             }
         });
     }
