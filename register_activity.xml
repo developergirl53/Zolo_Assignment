@@ -10,13 +10,14 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/log_register"
+        android:id="@+id/log_page"
         android:layout_width="500dp"
         android:layout_height="30dp"
         android:text="LOG IN"
         android:textSize="15sp"
         android:paddingLeft="250dp"
         android:textColor="#fff"
+        android:clickable="true"
         android:textStyle="bold"
         android:foregroundGravity="center"
         android:layout_marginTop="20dp"
@@ -24,8 +25,8 @@
         android:gravity="center_horizontal"/>
 
     <TextView
-        android:id="@+id/register"
-        android:layout_below="@+id/log_register"
+        android:id="@+id/register_txt"
+        android:layout_below="@+id/log_page"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="REGISTER"
@@ -43,7 +44,7 @@
         android:text="Please register with Zolo to continue"
         android:textColor="#fff"
         android:textStyle="bold"
-        android:layout_below="@+id/log_register"
+        android:layout_below="@+id/log_page"
         android:layout_centerHorizontal="true" />
 
     <ImageView
@@ -146,18 +147,18 @@
         android:layout_alignEnd="@+id/email" />
 
     <ImageView
-        android:id="@+id/pswd"
+        android:id="@+id/set_pswd"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:src="@android:drawable/ic_lock_idle_lock"
         tools:ignore="ContentDescription"
         android:layout_marginBottom="7dp"
-        android:layout_alignBottom="@+id/set_password"
+        android:layout_alignBottom="@+id/pswd"
         android:layout_alignLeft="@+id/name_image"
         android:layout_alignStart="@+id/name_image" />
 
     <EditText
-        android:id="@+id/set_password"
+        android:id="@+id/pswd"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:ems="10"
@@ -180,11 +181,12 @@
         android:layout_alignEnd="@+id/name" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/register"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginBottom="73dp"
         android:text="REGISTER"
+        android:clickable="true"
         android:textColor="#000"
         android:background="#ffd133"
         android:layout_alignParentBottom="true"
